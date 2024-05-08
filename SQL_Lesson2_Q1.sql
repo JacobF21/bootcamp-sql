@@ -12,15 +12,13 @@ CREATE TABLE Product (
  
  select * from Product order by name asc;
 SELECT * FROM Product WHERE price = (SELECT MAX(price) FROM Product);
-SELECT distinct count(id) from PRODUCT;
+SELECT count(id) from PRODUCT;
 SELECT * FROM Product WHERE lower(name) LIKE '%laptop%';
-
 select AVG(price) as average_price from product;
 select * from Product order by created_at Limit 1;
 select Sum(price) as 'Total Price' from product;
-
 select Max(price) as 'Max price for Phones', min(price) from product where name like '%phone%';
-select description as 'Product Description' from Product where description like 'wireless';
+select *, description as 'Product Description' from Product where lower(description) like '%wireless%';
 
 
 
